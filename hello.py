@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, jsonify
 import atexit
 import os
 import json
+from twilio.twiml.messaging_response import MessagingResponse
 
 app = Flask(__name__, static_url_path='')
 
@@ -21,7 +22,10 @@ if 'VCAP_SERVICES' in os.environ:
         client = Cloudant(user, password, url=url, connect=True)
         db = client.create_database(db_name, throw_on_exists=False)
 elif "CLOUDANT_URL" in os.environ:
-    client = Cloudant(os.environ['CLOUDANT_USERNAME'], os.environ['CLOUDANT_PASSWORD'], url=os.environ['CLOUDANT_URL'], connect=True)
+    client = Cloudant(os.environ['CLOUDANT_USERNAME'],
+                      os.environ['CLOUDANT_PASSWORD'],
+                      url=os.environ['CLOUDANT_URL'],
+                      connect=True)
     db = client.create_database(db_name, throw_on_exists=False)
 elif os.path.isfile('vcap-local.json'):
     with open('vcap-local.json') as f:
@@ -38,9 +42,11 @@ elif os.path.isfile('vcap-local.json'):
 # When running this app on the local machine, default the port to 8000
 port = int(os.getenv('PORT', 8000))
 
+
 @app.route('/')
 def root():
     return app.send_static_file('index.html')
+
 
 # /* Endpoint to greet and add a new visitor to database.
 # * Send a POST request to localhost:8000/api/visitors with body
@@ -56,6 +62,7 @@ def get_visitor():
         print('No database')
         return jsonify([])
 
+
 # /**
 #  * Endpoint to get a JSON array of all the visitors in the database
 #  * REST API example:
@@ -70,7 +77,7 @@ def get_visitor():
 @app.route('/api/visitors', methods=['POST'])
 def put_visitor():
     user = request.json['name']
-    data = {'name':user}
+    data = {'name': user}
     if client:
         my_document = db.create_document(data)
         data['_id'] = my_document['_id']
@@ -79,10 +86,24 @@ def put_visitor():
         print('No database')
         return jsonify(data)
 
+
+@app.route("/sms", methods=['GET', 'POST'])
+def sms_ahoy_reply():
+    """Respond to incoming messages with a friendly SMS."""
+    # Start our response
+    resp = MessagingResponse()
+
+    # Add a message
+    resp.message("Ahoy! Thanks so much for your message.")
+
+    return str(resp)
+
+
 @atexit.register
 def shutdown():
     if client:
         client.disconnect()
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port, debug=True)
