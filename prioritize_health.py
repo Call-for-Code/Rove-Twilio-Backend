@@ -29,6 +29,7 @@ def prioritize_health(sentence,model):
         url='https://gateway.watsonplatform.net/natural-language-understanding/api'
     )
     result=natural_language_understanding.analyze(
+		language="en",
         text=sentence,
         features=Features(keywords=KeywordsOptions())).get_result()
     print(result)
@@ -37,9 +38,9 @@ def prioritize_health(sentence,model):
     #find key words in the sentence. for each word, find nearest keywords based on the avg cosine score
     # print(symptoms)
     closest_symptoms=[] #add one for each keyword
+    best_symptom=None
     for cur_keyword in keywords:
         best_avg_sim=0
-        best_symptom=None
         print("Finding closest match for keyword={}".format(cur_keyword))
         test_keyword=cur_keyword.split(" ")[-1]
         print("Test keyword={}".format(test_keyword))
@@ -67,7 +68,10 @@ def prioritize_health(sentence,model):
                     best_avg_sim=avg_sim
                     best_symptom=cur_symptom
         print(best_avg_sim,best_symptom)
-    priority_score=priority_dict[best_symptom]
+    if best_symptom is not None:
+        priority_score=priority_dict[best_symptom]
+    else:
+        priority_score=0
     res=(keywords,priority_score)
     print("Result={}".format(res))
     return res

@@ -113,21 +113,27 @@ def get_health_priority(doc):
     print("Sentence={}".format(sentence))
 
     keywords,priority_score=prioritize_health.prioritize_health(sentence,model)
-    return keywords,math.min(1, priority_score/10.0)
+    return keywords,min(1, priority_score/10.0)
 
 def get_hygiene_priority(doc):
-    return math.min(1, len(doc['hygiene']['needed_hygiene_supplies'])/5.0)
+    return min(1, len(doc['hygiene']['needed_hygiene_supplies'])/5.0)
 
 def get_food_priority(doc):
     num_people=doc['food']['n_people']
     num_days_left=doc['food']['num_days_left']
-    raw_priority=float(num_people)/num_days_left
+    if num_days_left > 0:
+        raw_priority=float(num_people)/num_days_left
+    else:
+        raw_priority=10
     # min(x)=1,max(x)=10
     return (raw_priority-1)/9
+	
+def doc_done(doc):
+	return (('health' in doc) and ('food' in doc) and ('n_people' in doc['food']) and ('num_days_left' in doc['food']) and ('hygiene' in doc) and ('needed_hygiene_supplies' in doc['hygiene']))
 
 def update_priority_scores():
     for doc in db:
-        if (not (('health' in doc) and ('food' in doc) and ('hygiene' in doc))):
+        if (not doc_done(doc)):
             continue
         health_key_words,health_priority=get_health_priority(doc)
         food_priority=get_food_priority(doc)
@@ -139,12 +145,13 @@ def update_priority_scores():
         doc.save()
 
 @app.route("/users",methods=['GET'])
+@app.route("/rove/users",methods=['GET'])
 def users():
     # Calculate individual priority scores for each user
     update_priority_scores()
     #for doc in db:
        # print(doc)
-    return jsonify([doc for doc in db if (('health' in doc) and ('food' in doc) and ('hygiene' in doc))])
+    return jsonify([doc for doc in db if doc_done(doc)])
 
 @app.route("/sms", methods=['GET', 'POST'])
 def sms():
