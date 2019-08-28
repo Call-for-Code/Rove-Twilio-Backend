@@ -1,0 +1,12 @@
+# IPython log file
+
+import gensim
+model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300-SLIM.bin', binary=True)
+print(model.most_similar('hello')) #Find words most similar to given word
+print(model.similarity('man', 'woman')) #Find cosine similarity between the 2 words i.e. from 0-1 how close they are, with 1 being most
+get_ipython().magic(u'logstart prioritize_health')
+get_ipython().magic(u'ls ')
+get_ipython().magic(u'ls ')
+data="i have a small wound"
+words=data.split(" ")
+words

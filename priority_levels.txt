@@ -1,0 +1,406 @@
+Protocol 1: Abdominal Pain/Problems
+1-D-1 Not alert
+1-C-1 Suspected aortic aneurysm (tearing/ripping pain) ≥50 years old
+1-C-2 Known aortic aneurysm
+1-C-3 Fainting or near fainting ≥50 years old
+1-C-4 Females with fainting or near fainting 12-50 years old
+1-C-5 Males with pain above navel ≥35 years old
+1-C-6 Females with pain above navel ≥ 45 years old
+1-A-1 Abdominal pain
+Protocol 2: Allergies (Reactions)/Envenomations (Stings/Bites)
+2-E-1 Ineffective breathing
+2-D-1 Not alert
+2-D-2 Difficulty speaking between breaths
+2-D-3 Swarming attack (bee, wasp, hornet)
+2-D-4 Snakebite
+2-C-1 Difficulty breathing or swallowing
+2-C-2 History of severe allergic reaction
+2-B-1 Unknown status/other codes not applicable
+2-A-1 No difficulty breathing or swallowing (rash, hives or itching may be present)
+2-A-2 Spider bite
+Suffixes: I=Injection administered or advised, M=Medication administered or advised
+Protocol 3: Animal Bites/Attacks
+3-D-1 Unconscious or arrest
+3-D-2 Not alert
+3-D-3 Chest or neck injury (with difficulty breathing)
+3-D-4 Dangerous body area
+3-D-5 Large animal
+3-D-6 Exotic animal
+3-D-7 Attack of multiple animals
+3-B-1 Possibly dangerous body area
+3-B-2 Serious hemorrhage
+3-B-3 Unknown status/other codes not applicable
+3-A-1 Not dangerous body area
+3-A-2 Non-recent (≥6 hours) injuries (without priority symptoms)
+3-A-3 Superficial bites
+Protocol 4: Assault/Sexual Assault
+4-D-1 Unconscious or arrest
+4-D-2 Not alert
+4-D-3 Chest or neck injury (with difficulty breathing)
+4-D-4 Multiple victims
+4-B-1 Possibly dangerous body area
+4-B-2 Serious hemorrhage
+4-B-3 Unknown status/other codes not applicable
+4-A-1 Not dangerous body area
+4-A-2 Non-recent (≥6 hours) injuries (without priority symptoms)
+Suffixes: A=Assault, S=Sexual assault
+Protocol 5: Back Pain (Non-Traumatic or Non-Recent Trauma)
+5-D-1 Not alert
+5-C-1 Suspected aortic aneurysm (tearing/ripping pain) ≥50 years old
+5-C-2 Known aortic aneurysm
+5-C-3 Fainting or nearly fainting ≥50 years old
+5-A-1 Non-traumatic back pain
+5-A-2 Non-recent (≥6 hours) traumatic back pain (without priority symptoms)
+Protocol 6: Breathing Problems
+6-E-1 Ineffective breathing
+6-D-1 Not alert
+6-D-2 Difficulty speaking between breaths
+6-D-3 Changing color
+6-D-4 Clammy
+6-C-1 Abnormal breathing
+Suffixes: A=Asthma history
+Protocol 7: Burns (Scalds)/Explosion (Blast)
+7-E-1 Person on fire
+7-D-1 Multiple victims
+7-D-2 Unconscious or arrest
+7-D-3 Not alert
+7-D-4 Difficulty speaking between breaths
+7-C-1 Building fire with persons reported inside
+7-C-2 Difficulty breathing
+7-C-3 Burns ≥18% body area
+7-C-4 Significant facial burns
+7-B-1 Blast injuries (without priority symptoms)
+7-B-2 Unknown status/other codes not applicable
+7-A-1 Burns <18% body area
+7-A-2 Fire alarm (unknown situation)
+7-A-3 Sunburn or minor burns (≤ hand size)
+Suffixes: E=Explosion, F=Fire present, W=Fireworks
+Protocol 8: Carbon Monoxide/Inhalation/HAZMAT/CBRN
+8-D-1 Unconscious or arrest
+8-D-2 Not alert
+8-D-3 Difficulty speaking between breaths
+8-D-4 Multiple victims
+8-D-5 Unknown status/other codes not applicable
+8-C-1 Alert with difficulty breathing
+8-B-1 Alert without difficulty breathing
+8-F-1 Carbon monoxide detector alarm (without priority symptoms)
+Suffixes: B=Biological, C=Chemical, G=Smell of gas/fumes, M=Carbon Monoxide, N=Nuclear, R=Radiological, S=Suicide attempt (carbon monoxide), U=Unknown
+Protocol 9: Cardiac or Respiratory Arrest/Death
+9-E-1 Not breathing at all
+9-E-2 Breathing uncertain (agonal)
+9-E-3 Hanging
+9-E-4 Strangulation
+9-E-5 Suffocation
+9-E-6 Underwater
+9-D-1 Ineffective breathing
+9-D-2 Obvious or expected death questionable
+9-B-1 Obvious death unquestionable (a through k)
+9-F-1 Expected death unquestionable (x through z)
+Suffixes: a=Cold and stiff in a warm environment, b=Decapitation, c=Decomposition, d=Incineration, e=Non-recent death, f=Injuries obviously incompatible with life, g=Submersion (>6 hours), x=Terminal illness, y=DNR (Do Not Resuscitate) order
+Note: Local medical direction may permit additional suffixes for 9-B-1 (designated with letters h through k) and an additional suffix for 9-F-1 (designated letter z) specifying indicators determined by the medical director.
+Protocol 10: Chest Pain (Non-Traumatic)
+10-D-1 Not alert
+10-D-2 Difficulty speaking between breaths
+10-D-3 Changing color
+10-D-4 Clammy
+10-C-1 Abnormal breathing
+10-C-2 Heart attack or angina history
+10-C-3 Cocaine
+10-C-4 Breathing normally ≥35 years old
+10-A-1 Breathing normally <35 years old
+Protocol 11: Choking
+11-E-1 Complete obstruction/ineffective breathing
+11-D-1 Abnormal breathing (partial obstruction)
+11-D-2 Not alert
+11-A-1 Not choking now (can talk or cry, is alert and breathing normally)
+Protocol 12: Convulsions/Seizures
+12-D-1 Not breathing
+12-D-2 Continuous or multiple seizures
+12-D-3 Agonal/ineffective breathing
+12-D-4 Effective breathing not verified, patient ≥35 years old
+12-C-1 Focal seizure (not alert)
+12-C-2 Pregnancy
+12-C-3 Diabetic
+12-C-4 Not seizing now and effective breathing verified (>6 years old, confirmed no seizure disorder)
+12-C-5 History of stroke or brain tumor
+12-C-6 Overdose/poisoning (ingestion)
+12-C-7 Atypical seizure
+12-B-1 Effective breathing not verified <35 years old
+12-A-1 Not seizing now and effective breathing verified (known seizure disorder)
+12-A-2 Not seizing now and effective breathing verified (seizure disorder unknown)
+12-A-3 Not seizing now and effective breathing verified (≤6 years old, confirmed no seizure disorder)
+12-A-4 Focal seizure (alert)
+12-A-5 Impending seizure (aura)
+Suffixes: E=Epileptic or previous seizure diagnosis
+Protocol 13: Diabetic Problems
+13-D-1 Unconscious
+13-C-1 Not alert
+13-C-2 Abnormal behavior
+13-C-3 Abnormal breathing
+13-A-1 Alert and behaving normally
+Suffixes: C=Combative or aggressive
+Protocol 14: Drowning (near)/Diving/SCUBA Accident
+14-D-1 Unconscious or arrest
+14-D-2 Not alert
+14-D-3 Diving or suspected neck injury
+14-D-4 SCUBA accident
+14-C-1 Alert with abnormal breathing
+14-B-1 Alert and breathing normally (injuries or in water)
+14-B-2 Unknown status/other codes not applicable
+14-A-1 Alert and breathing normally (no injuries and out of water)
+Protocol 15: Electrocution/Lightning
+15-E-1 Not breathing/ineffective breathing
+15-D-1 Unconscious
+15-D-2 Not disconnected from power
+15-D-3 Power not off or hazard present
+15-D-4 Extreme fall (≥30 ft/10 m)
+15-D-5 Long fall
+15-D-6 Not alert
+15-D-7 Abnormal breathing
+15-D-8 Unknown status/other codes not applicable
+15-C-1 Alert and breathing normally
+Suffixes: E=Electrocution, L=Lightning
+Protocol 16: Eye Problems/Injuries
+16-D-1 Not alert
+16-B-1 Severe eye injuries
+16-A-1 Moderate eye injuries
+16-A-2 Minor eye injuries
+16-A-3 Medical eye problems
+Protocol 17: Falls
+17-D-1 Extreme fall (≥30 ft/10 m)
+17-D-2 Unconscious or arrest
+17-D-3 Not alert
+17-D-4 Chest or neck injury (with difficulty breathing)
+17-D-5 Long fall
+17-B-1 Possibly dangerous body area
+17-B-2 Serious hemorrhage
+17-B-3 Unknown status/other codes not applicable
+17-A-1 Not dangerous body area
+17-A-2 Non-recent (≥6 hours) injuries (without priority symptoms)
+17-A-3 Public assist (no injuries and no priority symptoms)
+Suffixes: G=On the ground or floor, J=Jumper (suicide attempt)
+Protocol 18: Headache
+18-C-1 Not alert
+18-C-2 Abnormal breathing
+18-C-3 Speech problems
+18-C-4 Sudden onset of severe pain
+18-C-5 Numbness
+18-C-6 Paralysis
+18-C-7 Change in behavior (≤3 hours)
+18-B-1 Unknown status/other codes not applicable
+18-A-1 Breathing normally
+Protocol 19: Heart Problems/AICD
+19-D-1 Not alert
+19-D-2 Difficulty speaking between breaths
+19-D-3 Changing color
+19-D-4 Clammy
+19-D-5 Just resuscitated and/or defibrillated (external)
+19-C-1 Firing of AICD
+19-C-2 Abnormal breathing
+19-C-3 Chest pain ≥35 years old
+19-C-4 Cardiac history
+19-C-5 Cocaine
+19-C-6 Heart rate <50 bpm or ≥130 bpm (without priority symptoms)
+19-C-7 Unknown status/other codes not applicable
+19-A-1 Heart rate ≥50 bpm and <130 bpm (without priority symptoms)
+19-A-2 Chest pain <35 years old (without priority symptoms)
+Protocol 20: Heat/Cold Exposure
+20-D-1 Not alert
+20-D-2 Multiple victims (with priority symptoms)
+20-C-1 Heart attack or angina history
+20-B-1 Change in skin color
+20-B-2 Unknown status/other codes not applicable
+20-A-1 Alert
+Suffixes: C=Cold exposure, H=Heat exposure
+Protocol 21: Hemorrhage/Laceration
+21-D-1 Unconscious or arrest
+21-D-2 Not alert
+21-D-3 Dangerous hemorrhage
+21-D-4 Abnormal breathing
+21-C-1 Hemorrhage through tubes
+21-C-2 Hemorrhage of dialysis fistula
+21-B-1 Possibly dangerous hemorrhage
+21-B-2 Serious hemorrhage
+21-B-3 Bleeding disorder
+21-B-4 Blood thinners
+21-A-1 Not dangerous hemorrhage
+21-A-2 Minor hemorrhage
+Protocol 22: Inaccessible Incident/Other Entrapments (Non-Vehicle)
+22-D-1 Mechanical/machinery entrapment
+22-D-2 Trench collapse
+22-D-3 Structure collapse
+22-D-4 Confined space rescue
+22-D-5 Inaccessible terrain situation
+22-D-6 Mudslide/avalanche
+22-B-1 No longer trapped (unknown injuries)
+22-B-2 Peripheral entrapment only
+22-B-3 Unknown status (investigation)/other codes not applicable
+22-A-1 No longer trapped (no injuries)
+Suffixes: A=Above ground (≥6 ft/2 m), B=Below ground (≥6 ft/2 m), M=Multiple victims, X=Above ground and multiple victims, Y=Below ground and multiple victims
+Protocol 23: Overdose/Poisoning (Ingestion)
+23-D-1 Unconscious
+23-D-2 Changing color
+23-C-1 Not alert
+23-C-2 Abnormal breathing
+23-C-3 Antidepressants (tricyclic)
+23-C-4 Cocaine, methamphetamine (or derivatives)
+23-C-5 Narcotics (heroin)
+23-C-6 Acid or alkali (lye)
+23-C-7 Unknown status/other codes not applicable
+23-C-8 Poison Control request for response
+23-B-1 Overdose (without priority symptoms)
+23-F-1 Poisoning (without priority symptoms)
+Suffixes: A=Accidental, I=Intentional, V=Violent or combative
+Protocol 24: Pregnancy/Childbirth/Miscarriage
+24-D-1 Breech or cord
+24-D-2 Head visible/out
+24-D-3 Imminent delivery (≥5 months/20 weeks)
+24-D-4 3rd trimester hemorrhage
+24-D-5 High risk complications
+24-D-6 Baby born (complications with baby)
+24-D-7 Baby born (complications with mother)
+24-C-1 2nd trimester hemorrhage or miscarriage
+24-C-2 1st trimester serious hemorrhage
+24-C-3 Baby born (no complications)
+24-B-1 Labor (delivery not imminent, ≥5 months/20 weeks)
+24-B-2 Unknown status/other codes not applicable
+24-A-1 1st trimester hemorrhage or miscarriage
+24-F-1 Waters broken (no contractions or presenting parts)
+Protocol 25: Psychiatric/Abnormal Behavior/Suicide Attempt
+25-D-1 Not alert
+25-D-2 Dangerous hemorrhage
+25-B-1 Serious hemorrhage
+25-B-2 Non-serious or minor hemorrhage
+25-B-3 Threatening suicide
+25-B-4 Jumper (threatening)
+25-B-5 Near hanging, strangulation or suffocation (alert)
+25-B-6 Unknown status/other codes not applicable
+25-A-1 Non-suicidal and alert
+25-A-2 Suicidal (not threatening) and alert
+Suffixes: B=Both violent and weapons, V=Violent, W=Weapons
+Protocol 26: Sick Person (Specific Diagnosis)
+26-D-1 Not alert
+26-C-1 Altered level of consciousness
+26-C-2 Abnormal breathing
+26-C-3 Sickle cell crisis/thalassemia
+26-B-1 Unknown status/other codes not applicable
+26-A-1 No priority symptoms (complaint conditions 2-11 not identified)
+26-A-2 Blood pressure abnormality
+26-A-3 Dizziness/vertigo
+26-A-4 Fever/chills
+26-A-5 General weakness
+26-A-6 Nausea
+26-A-7 New onset of immobility
+26-A-8 Other pain
+26-A-9 Transportation only
+26-A-10 Unwell/ill
+26-A-11 Vomiting
+26-F-1 CODE NOT IN USE
+26-F-2 Boils
+26-F-3 Bumps (non-traumatic)
+26-F-4 Can't sleep
+26-F-5 Can't urinate (without abdominal pain)
+26-F-6 Catheter (in/out without hemorrhaging)
+26-F-7 Constipation
+26-F-8 Cramps/spasms/joint pain (in extremities and non-traumatic)
+26-F-9 Cut-off ring request
+26-F-10 Deafness
+26-F-11 Defecation/diarrhea
+26-F-12 Earache
+26-F-13 Enema
+26-F-14 Gout
+26-F-15 Hemorrhoids/piles
+26-F-16 Hepatitis
+26-F-17 Hiccups
+26-F-18 Itching
+26-F-19 Nervous
+26-F-20 Object stuck (nose, ear, vagina, rectum, penis)
+26-F-21 Object swallowed (without choking or difficulty breathing, can talk)
+26-F-22 Painful urination
+26-F-23 Penis problems/pain
+26-F-24 Rash/skin disorder (without difficulty breathing or swallowing)
+26-F-25 Sexually Transmitted Disease (STD)
+26-F-26 Sore throat (without difficulty breathing or swallowing
+26-F-27 Toothache (without jaw pain)
+26-F-28 Wound infected (focal or surface)
+Protocol 27: Stab/Gunshot/Penetrating Trauma
+27-D-1 Unconscious or arrest
+27-D-2 Not alert
+27-D-3 Central wounds
+27-D-4 Multiple wounds
+27-D-5 Multiple victims
+27-B-1 Non-recent (≥6 hours) single central wound
+27-B-2 Known single peripheral wound
+27-B-3 Serious hemorrhage
+27-B-4 Unknown status/other codes not applicable
+27-B-5 Obvious death (explosive GSW to head)
+27-A-1 Non-recent (≥6 hours peripheral wounds (without priority symptoms)
+Suffixes: G=Gunshot, P=Penetrating trauma, S=Stab, X=Self-inflicted GSW, Y=Self-inflicted stab
+Protocol 28: Stroke (CVA)/Transient Ischemic Attack (TIA)
+28-C-1 Not alert
+28-C-2 Abnormal breathing
+28-C-3 Sudden speech problems
+28-C-4 Sudden weakness or numbness (one side)
+28-C-5 Sudden paralysis or facial droop (one side)
+28-C-6 Sudden loss of balance or coordination)
+28-C-7 Sudden vision problems
+28-C-8 Sudden onset of severe headache
+28-C-9 Stroke history
+28-C-10 TIA (mini-stroke) history
+28-C-11 Breathing normally ≥35 years old
+28-C-12 Unknown status/other codes not applicable
+28-A-1 Breathing normally <35 years old
+Suffixes: C=Partial evidence of stroke (less than _ hours), D=Partial evidence of stroke (greater than _ hours), E=Partial evidence of stroke (unknown time frame), F=Strong evidence of stroke (less than _ hours), G=Greater than _ hours since symptoms started (stroke diagnostic not completed), H=Strong evidence of stroke (greater than _ hours), I=Strong evidence of stroke (unknown time frame), J=Clear evidence of stroke (less than _ hours), K=Clear evidence of stroke (greater than _ hours), L=Less than _ hours since symptom onset (stroke diagnostic not completed), M=Clear evidence of stroke (unknown time frame), U=Unknown when symptoms started (stroke diagnostic not completed), X=No test evidence of stroke (less than _ hours), Y=No test evidence of stroke (greater than _ hours), Z=No test evidence of stroke (unknown time frame)
+Note: Local medical direction will determine the time duration indicated in the suffixes.
+Protocol 29: Traffic/Transportation Incidents
+29-D-1 Major incident (a through f)
+29-D-2 High mechanism (k through s)
+29-D-3 Hazmat
+29-D-4 Pinned (trapped victim)
+29-D-5 Not alert
+29-B-1 Injuries
+29-B-2 Serious hemorrhage
+29-B-3 Other hazards
+29-B-4 Unknown status/other codes not applicable
+29-A-1 1st party caller with injury to not dangerous body area
+29-F-1 No injuries (confirmed)
+Suffixes: A=Multiple patients and additional response required, a=Aircraft, b=Bus, c=Subway/metro, d=Train, e=Watercraft, f=Multi-vehicle (≥10) pile-up, k=All-terrain/snowmobile, l=Auto vs. bicycle/motorcycle, M=Multiple patients, m=Auto vs. pedestrian, n=Ejection, o=Personal watercraft, p=Rollovers, q=Vehicle off bridge/height, r=Possible death at scene, s=Sinking vehicle, U=Unknown number of patients, X=Unknown number of patients and additional response required
+Protocol 30: Traumatic Injuries (Specific)
+30-D-1 Unconscious or arrest
+30-D-2 Not alert
+30-D-3 Chest or neck injury (with difficulty breathing)
+30-B-1 Possibly dangerous body area
+30-B-2 Serious hemorrhage
+30-A-1 Not dangerous body area
+30-A-2 Non-recent (≥6 hours) injuries (without priority symptoms)
+Protocol 31: Unconscious/Fainting (Near)
+31-E-1 Ineffective breathing
+31-D-1 Unconscious - agonal/ineffective breathing
+31-D-2 Unconscious - effective breathing
+31-D-3 Not alert
+31-D-4 Changing color
+31-C-1 Alert with abnormal breathing
+31-C-2 Fainting episode(s) and alert ≥35 years old (with cardiac history)
+31-C-3 Females 12-50 years old with abdominal pain
+31-A-1 Fainting episode(s) and alert ≥35 years old (without cardiac history)
+31-A-2 Fainting episode(s) and alert <35 years old (with cardiac history)
+31-A-3 Fainting episode(s) and alert <35 years old (without cardiac history)
+Protocol 32: Unknown Problem (Man Down)
+32-D-1 Life status questionable
+32-B-1 Standing, sitting, moving or talking
+32-B-2 Medical alarm (alert) notifications (no patient information)
+32-B-3 Unknown status/other codes not applicable
+32-B-4 Caller's language not understood (no interpreter in center)
+Protocol 33: Transfer/Interfacility/Palliative Care
+33-D-1 Suspected cardiac or respiratory arrest
+33-D-2 Just resuscitated and/or defibrillated (external)
+33-C-1 Not alert (acute change)
+33-C-2 Abnormal breathing (acute onset)
+33-C-3 Significant hemorrhage or shock
+33-C-4 Possible acute heart problems or MI (heart attack)
+33-C-5 Acute severe pain
+33-C-6 Emergency response requested
+33-A-1 Acuity I (no priority symptoms)
+33-A-2 Acuity II (no priority symptoms)
+33-A-3 Acuity III (no priority symptoms)
+Suffixes: P=Palliative care, T=Transfer/interfacility

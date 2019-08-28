@@ -1,0 +1,353 @@
+Not alert,4
+Suspected aortic aneurysm (tearing/ripping pain) ≥50 years old,3
+Known aortic aneurysm,3
+Fainting or near fainting ≥50 years old,3
+Females with fainting or near fainting 12-50 years old,3
+Males with pain above navel ≥35 years old,3
+Females with pain above navel ≥ 45 years old,3
+Abdominal pain,1
+Ineffective breathing,5
+Not alert,4
+Difficulty speaking between breaths,4
+Swarming attack (bee, wasp, hornet),4
+Snakebite,4
+Difficulty breathing or swallowing,3
+History of severe allergic reaction,3
+Unknown status/other codes not applicable,2
+No difficulty breathing or swallowing (rash, hives or itching may be present),1
+Spider bite,1
+Unconscious or arrest,4
+Not alert,4
+Chest or neck injury (with difficulty breathing),4
+Dangerous body area,4
+Large animal,4
+Exotic animal,4
+Attack of multiple animals,4
+Possibly dangerous body area,2
+Serious hemorrhage,2
+Unknown status/other codes not applicable,2
+Not dangerous body area,1
+Non-recent (≥6 hours) injuries (without priority symptoms),1
+Superficial bites,1
+Unconscious or arrest,4
+Not alert,4
+Chest or neck injury (with difficulty breathing),4
+Multiple victims,4
+Possibly dangerous body area,2
+Serious hemorrhage,2
+Unknown status/other codes not applicable,2
+Not dangerous body area,1
+Non-recent (≥6 hours) injuries (without priority symptoms),1
+Not alert,4
+Suspected aortic aneurysm (tearing/ripping pain) ≥50 years old,3
+Known aortic aneurysm,3
+Fainting or nearly fainting ≥50 years old,3
+Non-traumatic back pain,1
+Non-recent (≥6 hours) traumatic back pain (without priority symptoms),1
+Ineffective breathing,5
+Not alert,4
+Difficulty speaking between breaths,4
+Changing color,4
+Clammy,4
+Abnormal breathing,3
+Person on fire,5
+Multiple victims,4
+Unconscious or arrest,4
+Not alert,4
+Difficulty speaking between breaths,4
+Building fire with persons reported inside,3
+Difficulty breathing,3
+Burns ≥18% body area,3
+Significant facial burns,3
+Blast injuries (without priority symptoms),2
+Unknown status/other codes not applicable,2
+Burns <18% body area,1
+Fire alarm (unknown situation),1
+Sunburn or minor burns (≤ hand size),1
+Unconscious or arrest,4
+Not alert,4
+Difficulty speaking between breaths,4
+Multiple victims,4
+Unknown status/other codes not applicable,4
+Alert with difficulty breathing,3
+Alert without difficulty breathing,2
+Carbon monoxide detector alarm (without priority symptoms),6
+Not breathing at all,5
+Breathing uncertain (agonal),5
+Hanging,5
+Strangulation,5
+Suffocation,5
+Underwater,5
+Ineffective breathing,4
+Obvious or expected death questionable,4
+Obvious death unquestionable (a through k),2
+Expected death unquestionable (x through z),6
+Not alert,4
+Difficulty speaking between breaths,4
+Changing color,4
+Clammy,4
+Abnormal breathing,3
+Heart attack or angina history,3
+Cocaine,3
+Breathing normally ≥35 years old,3
+Breathing normally <35 years old,1
+Complete obstruction/ineffective breathing,5
+Abnormal breathing (partial obstruction),4
+Not alert,4
+Not choking now (can talk or cry, is alert and breathing normally),1
+Not breathing,4
+Continuous or multiple seizures,4
+Agonal/ineffective breathing,4
+Effective breathing not verified, patient ≥35 years old,4
+Focal seizure (not alert),3
+Pregnancy,3
+Diabetic,3
+Not seizing now and effective breathing verified (>6 years old, confirmed no seizure disorder),3
+History of stroke or brain tumor,3
+Overdose/poisoning (ingestion),3
+Atypical seizure,3
+Effective breathing not verified <35 years old,2
+Not seizing now and effective breathing verified (known seizure disorder),1
+Not seizing now and effective breathing verified (seizure disorder unknown),1
+Not seizing now and effective breathing verified (≤6 years old, confirmed no seizure disorder),1
+Focal seizure (alert),1
+Impending seizure (aura),1
+Unconscious,4
+Not alert,3
+Abnormal behavior,3
+Abnormal breathing,3
+Alert and behaving normally,1
+Unconscious or arrest,4
+Not alert,4
+Diving or suspected neck injury,4
+SCUBA accident,4
+Alert with abnormal breathing,3
+Alert and breathing normally (injuries or in water),2
+Unknown status/other codes not applicable,2
+Alert and breathing normally (no injuries and out of water),1
+Not breathing/ineffective breathing,5
+Unconscious,4
+Not disconnected from power,4
+Power not off or hazard present,4
+Extreme fall (≥30 ft/10 m),4
+Long fall,4
+Not alert,4
+Abnormal breathing,4
+Unknown status/other codes not applicable,4
+Alert and breathing normally,3
+Not alert,4
+Severe eye injuries,2
+Moderate eye injuries,1
+Minor eye injuries,1
+Medical eye problems,1
+Extreme fall (≥30 ft/10 m),4
+Unconscious or arrest,4
+Not alert,4
+Chest or neck injury (with difficulty breathing),4
+Long fall,4
+Possibly dangerous body area,2
+Serious hemorrhage,2
+Unknown status/other codes not applicable,2
+Not dangerous body area,1
+Non-recent (≥6 hours) injuries (without priority symptoms),1
+Public assist (no injuries and no priority symptoms),1
+Not alert,3
+Abnormal breathing,3
+Speech problems,3
+Sudden onset of severe pain,3
+Numbness,3
+Paralysis,3
+Change in behavior (≤3 hours),3
+Unknown status/other codes not applicable,2
+Breathing normally,1
+Not alert,4
+Difficulty speaking between breaths,4
+Changing color,4
+Clammy,4
+Just resuscitated and/or defibrillated (external),4
+Firing of AICD,3
+Abnormal breathing,3
+Chest pain ≥35 years old,3
+Cardiac history,3
+Cocaine,3
+Heart rate <50 bpm or ≥130 bpm (without priority symptoms),3
+Unknown status/other codes not applicable,3
+Heart rate ≥50 bpm and <130 bpm (without priority symptoms),1
+Chest pain <35 years old (without priority symptoms),1
+Not alert,4
+Multiple victims (with priority symptoms),4
+Heart attack or angina history,3
+Change in skin color,2
+Unknown status/other codes not applicable,2
+Alert,1
+Unconscious or arrest,4
+Not alert,4
+Dangerous hemorrhage,4
+Abnormal breathing,4
+Hemorrhage through tubes,3
+Hemorrhage of dialysis fistula,3
+Possibly dangerous hemorrhage,2
+Serious hemorrhage,2
+Bleeding disorder,2
+Blood thinners,2
+Not dangerous hemorrhage,1
+Minor hemorrhage,1
+Mechanical/machinery entrapment,4
+Trench collapse,4
+Structure collapse,4
+Confined space rescue,4
+Inaccessible terrain situation,4
+Mudslide/avalanche,4
+No longer trapped (unknown injuries),2
+Peripheral entrapment only,2
+Unknown status (investigation)/other codes not applicable,2
+No longer trapped (no injuries),1
+Unconscious,4
+Changing color,4
+Not alert,3
+Abnormal breathing,3
+Antidepressants (tricyclic),3
+Cocaine, methamphetamine (or derivatives),3
+Narcotics (heroin),3
+Acid or alkali (lye),3
+Unknown status/other codes not applicable,3
+Poison Control request for response,3
+Overdose (without priority symptoms),2
+Poisoning (without priority symptoms),6
+Breech or cord,4
+Head visible/out,4
+Imminent delivery (≥5 months/20 weeks),4
+3rd trimester hemorrhage,4
+High risk complications,4
+Baby born (complications with baby),4
+Baby born (complications with mother),4
+2nd trimester hemorrhage or miscarriage,3
+1st trimester serious hemorrhage,3
+Baby born (no complications),3
+Labor (delivery not imminent, ≥5 months/20 weeks),2
+Unknown status/other codes not applicable,2
+1st trimester hemorrhage or miscarriage,1
+Waters broken (no contractions or presenting parts),6
+Not alert,4
+Dangerous hemorrhage,4
+Serious hemorrhage,2
+Non-serious or minor hemorrhage,2
+Threatening suicide,2
+Jumper (threatening),2
+Near hanging, strangulation or suffocation (alert),2
+Unknown status/other codes not applicable,2
+Non-suicidal and alert,1
+Suicidal (not threatening) and alert,1
+Not alert,4
+Altered level of consciousness,3
+Abnormal breathing,3
+Sickle cell crisis/thalassemia,3
+Unknown status/other codes not applicable,2
+No priority symptoms (complaint conditions 2-11 not identified),1
+Blood pressure abnormality,1
+Dizziness/vertigo,1
+Fever/chills,1
+General weakness,1
+Nausea,1
+New onset of immobility,1
+Other pain,1
+Transportation only,1
+Unwell/ill,1
+Vomiting,1
+CODE NOT IN USE,6
+Boils,6
+Bumps (non-traumatic),6
+Can't sleep,6
+Can't urinate (without abdominal pain),6
+Catheter (in/out without hemorrhaging),6
+Constipation,6
+Cramps/spasms/joint pain (in extremities and non-traumatic),6
+Cut-off ring request,6
+Deafness,6
+Defecation/diarrhea,6
+Earache,6
+Enema,6
+Gout,6
+Hemorrhoids/piles,6
+Hepatitis,6
+Hiccups,6
+Itching,6
+Nervous,6
+Object stuck (nose, ear, vagina, rectum, penis),6
+Object swallowed (without choking or difficulty breathing, can talk),6
+Painful urination,6
+Penis problems/pain,6
+Rash/skin disorder (without difficulty breathing or swallowing),6
+Sexually Transmitted Disease (STD),6
+Sore throat (without difficulty breathing or swallowing,6
+Toothache (without jaw pain),6
+Wound infected (focal or surface),6
+Unconscious or arrest,4
+Not alert,4
+Central wounds,4
+Multiple wounds,4
+Multiple victims,4
+Non-recent (≥6 hours) single central wound,2
+Known single peripheral wound,2
+Serious hemorrhage,2
+Unknown status/other codes not applicable,2
+Obvious death (explosive GSW to head),2
+Non-recent (≥6 hours peripheral wounds (without priority symptoms),1
+Not alert,3
+Abnormal breathing,3
+Sudden speech problems,3
+Sudden weakness or numbness (one side),3
+Sudden paralysis or facial droop (one side),3
+Sudden loss of balance or coordination),3
+Sudden vision problems,3
+Sudden onset of severe headache,3
+Stroke history,3
+TIA (mini-stroke) history,3
+Breathing normally ≥35 years old,3
+Unknown status/other codes not applicable,3
+Breathing normally <35 years old,1
+Major incident (a through f),4
+High mechanism (k through s),4
+Hazmat,4
+Pinned (trapped victim),4
+Not alert,4
+Injuries,2
+Serious hemorrhage,2
+Other hazards,2
+Unknown status/other codes not applicable,2
+1st party caller with injury to not dangerous body area,1
+No injuries (confirmed),6
+Unconscious or arrest,4
+Not alert,4
+Chest or neck injury (with difficulty breathing),4
+Possibly dangerous body area,2
+Serious hemorrhage,2
+Not dangerous body area,1
+Non-recent (≥6 hours) injuries (without priority symptoms),1
+Ineffective breathing,5
+Unconscious - agonal/ineffective breathing,4
+Unconscious - effective breathing,4
+Not alert,4
+Changing color,4
+Alert with abnormal breathing,3
+Fainting episode(s) and alert ≥35 years old (with cardiac history),3
+Females 12-50 years old with abdominal pain,3
+Fainting episode(s) and alert ≥35 years old (without cardiac history),1
+Fainting episode(s) and alert <35 years old (with cardiac history),1
+Fainting episode(s) and alert <35 years old (without cardiac history),1
+Life status questionable,4
+Standing, sitting, moving or talking,2
+Medical alarm (alert) notifications (no patient information),2
+Unknown status/other codes not applicable,2
+Caller's language not understood (no interpreter in center),2
+Suspected cardiac or respiratory arrest,4
+Just resuscitated and/or defibrillated (external),4
+Not alert (acute change),3
+Abnormal breathing (acute onset),3
+Significant hemorrhage or shock,3
+Possible acute heart problems or MI (heart attack),3
+Acute severe pain,3
+Emergency response requested,3
+Acuity I (no priority symptoms),1
+Acuity II (no priority symptoms),1
+Acuity III (no priority symptoms),1
