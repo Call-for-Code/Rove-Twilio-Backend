@@ -114,7 +114,7 @@ def get_health_priority(doc):
     return keywords,priority_score
 
 def get_hygiene_priority(doc):
-    return len(doc['hygiene']['needed_hygiene_supplies'])
+    return len(doc['hygiene']['needed_hygiene_supplies'])/5
 
 def get_food_priority(doc):
     num_people=doc['food']['n_people']
