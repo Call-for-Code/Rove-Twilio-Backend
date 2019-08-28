@@ -2,6 +2,7 @@
 
 from cloudant import Cloudant
 from flask import Flask, render_template, request, jsonify, session
+from flask_cors import CORS
 import atexit
 import os
 import json
@@ -17,6 +18,7 @@ import prioritize_health
 gmaps = googlemaps.Client(key='AIzaSyA7bV-H25Upx5HMPLQ_-5zDGfNNTypK6u4')
 
 app = Flask(__name__, static_url_path='')
+CORS(app)
 app.secret_key = 'BRYANHPCHIANG' + str(random.randint(1, 1000000000))
 
 db_name = 'rove'
