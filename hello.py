@@ -10,6 +10,8 @@ import googlemaps
 from IPython import embed
 from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_watson.natural_language_understanding_v1 import Features, KeywordsOptions
+import gensim
+import prioritize_health
 gmaps = googlemaps.Client(key='AIzaSyA7bV-H25Upx5HMPLQ_-5zDGfNNTypK6u4')
 
 app = Flask(__name__, static_url_path='')
@@ -49,10 +51,14 @@ elif os.path.isfile('vcap-local.json'):
         url = 'https://' + creds['host']
         client = Cloudant(user, password, url=url, connect=True)
         db = client.create_database(db_name, throw_on_exists=False)
-embed()
+# embed()
+
+# client.delete_database(db_name)
 # On IBM Cloud Cloud Foundry, get the port number from the environment variable PORT
 # When running this app on the local machine, default the port to 8000
 port = int(os.getenv('PORT', 8000))
+model = gensim.models.KeyedVectors.load_word2vec_format('GoogleNews-vectors-negative300-SLIM.bin', binary=True)
+print("Model loaded")
 
 @app.route('/')
 def root():
@@ -72,7 +78,6 @@ def get_visitor():
     else:
         print('No database')
         return jsonify([])
-
 
 # /**
 #  * Endpoint to get a JSON array of all the visitors in the database
@@ -98,10 +103,14 @@ def put_visitor():
         return jsonify(data)
 
 def get_health_priority(doc):
-    return 
+    sentence=doc['health']['health_description']
+    print("Sentence={}".format(sentence))
+    
+    keywords,priority_score=prioritize_health.prioritize_health(sentence,model)
+    return keywords,priority_score
 
 def get_hygiene_priority(doc):
-    return len(doc['hygiene']['needed_hygiene_priority'])
+    return len(doc['hygiene']['needed_hygiene_supplies'])
 
 def get_food_priority(doc):
     num_people=doc['food']['n_people']
@@ -112,7 +121,7 @@ def get_food_priority(doc):
 
 def update_priority_scores():
     for doc in db:
-        health_priority,health_key_words=get_health_priority(doc)
+        health_key_words,health_priority=get_health_priority(doc)
         food_priority=get_food_priority(doc)
         hygiene_priority=get_hygiene_priority(doc)
         doc['health']['priority']=health_priority
@@ -125,7 +134,9 @@ def update_priority_scores():
 def users():
     # Calculate individual priority scores for each user
     update_priority_scores()
-    return jsonify({doc['_id']:doc for doc in db})
+    for doc in db:
+        print(doc)
+    return jsonify([doc for doc in db])
 
 @app.route("/sms", methods=['GET', 'POST'])
 def sms():
