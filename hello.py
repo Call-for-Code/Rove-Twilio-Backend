@@ -15,6 +15,8 @@ from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_watson.natural_language_understanding_v1 import Features, KeywordsOptions
 import gensim
 import prioritize_health
+import time
+import math
 gmaps = googlemaps.Client(key='AIzaSyA7bV-H25Upx5HMPLQ_-5zDGfNNTypK6u4')
 
 app = Flask(__name__, static_url_path='')
@@ -111,10 +113,10 @@ def get_health_priority(doc):
     print("Sentence={}".format(sentence))
 
     keywords,priority_score=prioritize_health.prioritize_health(sentence,model)
-    return keywords,priority_score
+    return keywords,math.min(1, priority_score/10.0)
 
 def get_hygiene_priority(doc):
-    return len(doc['hygiene']['needed_hygiene_supplies'])/5
+    return math.min(1, len(doc['hygiene']['needed_hygiene_supplies'])/5.0)
 
 def get_food_priority(doc):
     num_people=doc['food']['n_people']
@@ -125,6 +127,8 @@ def get_food_priority(doc):
 
 def update_priority_scores():
     for doc in db:
+        if (not (('health' in doc) and ('food' in doc) and ('hygiene' in doc))):
+            continue
         health_key_words,health_priority=get_health_priority(doc)
         food_priority=get_food_priority(doc)
         hygiene_priority=get_hygiene_priority(doc)
@@ -138,98 +142,104 @@ def update_priority_scores():
 def users():
     # Calculate individual priority scores for each user
     update_priority_scores()
-    for doc in db:
-        print(doc)
-    return jsonify([doc for doc in db])
+    #for doc in db:
+       # print(doc)
+    return jsonify([doc for doc in db if (('health' in doc) and ('food' in doc) and ('hygiene' in doc))])
 
 @app.route("/sms", methods=['GET', 'POST'])
 def sms():
     counter = session.get('counter', 0)
     counter += 1
     session['counter'] = counter
-    resp = MessagingResponse()
-    data = request.values
-    msg = data.get('Body', None)
-    if not msg:
-        session['counter']=0
-        return str(resp.message("Sorry, I didn't get that. Try again? Enter START to begin if you haven't already."))
-    msg=str(msg)
-    print(msg)
-    if 'id' in session:
-        doc=db[session['id']]
-    else:
-        doc=db.create_document({'_id':str(uuid.uuid4())})
-        session['id']=doc['_id']
-    if counter == 1:
-        if not msg == 'START':
-            resp.message("{} Sorry, I didn't quite understand that. Enter START to begin the process.".format(msg))
-            session['counter'] = 0
+    try:
+        resp = MessagingResponse()
+        data = request.values
+        msg = data.get('Body', None)
+        if not msg:
+            session['counter']=0
+            return str(resp.message("Sorry, I didn't get that. Try again? Enter START to begin if you haven't already."))
+        msg=str(msg)
+        print(msg)
+        if 'id' in session:
+            doc=db[session['id']]
         else:
-            resp.message("Hi, what is your name and phone number? Separate the two with a comma please.")
-    elif counter == 2:
-        # Get the user's name
-        name,phone_number=msg.split(",")
-        phone_number=int(phone_number)
-        resp.message("Great to meet you, {}! What is your address the moment?".format(name))
-        # Add them to the database
-        doc['name']=name
-        doc['phone_number']=phone_number
-    elif counter==3:
-        address=msg
-        # Geocode the address
-        geocode_result=gmaps.geocode(address)
-        if not geocode_result:
-            resp.message("Sorry, we couldn't find anything for that address. Try again?")
-            session['counter']-=1
-        else:
-            top_result=geocode_result[0]
-            doc['location_information']=top_result
-            doc.save()
-            resp.message("Great, we determined your address to be {}. \n Now we're going to ask a few questions about your health. First, describe any medical issues you're facing."
-                .format(top_result["formatted_address"]))
-    elif counter==4:
-        health_description=msg
-        print(health_description)
-        doc['health']={}
-        doc['health']['health_description']=health_description
-        resp.message("\n".join([
-            "Do you need any specific medical supplies?",
-            "Here are some suggestions: {}".format(DELIM.join(suggested_health_supplies)),
+            doc=db.create_document({'_id':str(uuid.uuid4())})
+            session['id']=doc['_id']
+        doc['timestamp']=int(time.time())
+        if counter == 1:
+            if not msg == 'START':
+                resp.message("{} Sorry, I didn't quite understand that. Enter START to begin the process.".format(msg))
+                session['counter'] = 0
+            else:
+                resp.message("Hi, what is your name?")
+        elif counter == 2:
+            # Get the user's name
+            name=msg
+            phone_number=request.values.get('From')
+            resp.message("Great to meet you, {}! What is your address the moment?".format(name))
+            # Add them to the database
+            doc['name']=name
+            doc['phone_number']=phone_number
+        elif counter==3:
+            address=msg
+            # Geocode the address
+            geocode_result=gmaps.geocode(address)
+            if not geocode_result:
+                resp.message("Sorry, we couldn't find anything for that address. Try again?")
+                session['counter']-=1
+            else:
+                top_result=geocode_result[0]
+                doc['location_information']=top_result
+                doc.save()
+                resp.message("Great, we determined your address to be {}. \n Now we're going to ask a few questions about your health. First, describe any medical issues you're facing."
+                    .format(top_result["formatted_address"]))
+        elif counter==4:
+            health_description=msg
+            print(health_description)
+            doc['health']={}
+            doc['health']['health_description']=health_description
+            resp.message("\n".join([
+                "Do you need any specific medical supplies?",
+                "Here are some suggestions: {}".format(DELIM.join(suggested_health_supplies)),
+                ]))
+        elif counter==5:
+            health_supplies_needed=msg.replace(',','').split(" ")
+            print(health_supplies_needed)
+            doc['health']['health_supplies_needed']=health_supplies_needed
+            resp.message("Noted. Second, how many people are with you?")
+        elif counter==6:
+            doc['food']={}
+            doc['food']['n_people']=int(msg)
+            resp.message("Got it. What are the ages of your male companions? Separate your answer with a comma.")
+        elif counter==7:
+            ages=[int(x.strip()) for x in msg.split(",")]
+            doc['food']['male_ages']=ages
+            resp.message("Got it. What are the ages of your female companions? Separate your answer with a comma.")
+        elif counter==8:
+            ages=[int(x.strip()) for x in msg.split(",")]
+            doc['food']['female_ages']=ages
+            resp.message("Got it. How many days of food/water do you have left?")
+        elif counter==9:
+            num_days_left=int(msg)
+            doc['food']['num_days_left']=num_days_left
+            resp.message("\n".join([
+                "Got it, we'll be sending some supplies over.",
+                "Third, do you need any personal hygiene supplies?",
+                "Here are some suggested options: {}".format(DELIM.join(suggested_hygiene_supplies)),
             ]))
-    elif counter==5:
-        health_supplies_needed=msg.replace(',','').split(" ")
-        print(health_supplies_needed)
-        doc['health']['health_supplies_needed']=health_supplies_needed
-        resp.message("Noted. Second, how many people are with you?")
-    elif counter==6:
-        doc['food']={}
-        doc['food']['n_people']=int(msg)
-        resp.message("Got it. What are the ages of all the males? Separate your answer with a comma.")
-    elif counter==7:
-        ages=[int(x.strip()) for x in msg.split(",")]
-        doc['food']['male_ages']=ages
-        resp.message("Got it. What is the ages of all the females? Separate your answer with a comma.")
-    elif counter==8:
-        ages=[int(x.strip()) for x in msg.split(",")]
-        doc['food']['female_ages']=ages
-        resp.message("Got it. How many days of food/water do you have left?")
-    elif counter==9:
-        num_days_left=int(msg)
-        doc['food']['num_days_left']=num_days_left
-        resp.message("\n".join([
-            "Got it, we'll be sending some supplies over.",
-            "Third, do you need any personal hygiene supplies?",
-            "Here are some suggested options: {}".format(DELIM.join(suggested_hygiene_supplies)),
-        ]))
-    elif counter==10:
-        needed_hygiene_supplies=msg.replace(',','').split(" ")
-        doc['hygiene']={}
-        doc['hygiene']['needed_hygiene_supplies']=needed_hygiene_supplies
-        # Potentially ask about need for shelter
-        resp.message("Great. That's all the questions we have for now - we'll text you if we have any updates.")
-    doc.save()
-    for doc in db:
-        print(doc)        
+        elif counter==10:
+            needed_hygiene_supplies=msg.replace(',','').split(" ")
+            doc['hygiene']={}
+            doc['hygiene']['needed_hygiene_supplies']=needed_hygiene_supplies
+            # Potentially ask about need for shelter
+            resp.message("Great. That's all the questions we have for now - we'll text you if we have any updates.")
+            # reset session
+            session['counter']=0
+        doc.save()
+        for doc in db:
+            print(doc)  
+    except:
+        resp = "I'm not sure I understand. Please try again."
     return str(resp)
 
 @atexit.register
@@ -239,4 +249,4 @@ def shutdown():
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=port, debug=True)
+    app.run(host='0.0.0.0', port=port, debug=False)

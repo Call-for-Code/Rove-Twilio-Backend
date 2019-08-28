@@ -4,6 +4,7 @@ nltk.download('punkt')
 import gensim
 from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_watson.natural_language_understanding_v1 import Features, KeywordsOptions
+from ibm_key import *
 
 def is_useless(word):   
     pos=nltk.pos_tag([word])[0][1]
@@ -24,7 +25,7 @@ def prioritize_health(sentence,model):
     symptoms=priority_dict.keys()
     natural_language_understanding = NaturalLanguageUnderstandingV1(
         version='2019-07-12',
-        iam_apikey='eFxfKzryOzn_gY9b_s_ZX1pxN1T1dsXSjVsH6QC65KzO',
+        iam_apikey=ibm_key,
         url='https://gateway.watsonplatform.net/natural-language-understanding/api'
     )
     result=natural_language_understanding.analyze(
@@ -34,7 +35,7 @@ def prioritize_health(sentence,model):
     keywords=[x['text'] for x in result['keywords']]
     print(keywords)
     #find key words in the sentence. for each word, find nearest keywords based on the avg cosine score
-    print(symptoms[:10])
+    # print(symptoms)
     closest_symptoms=[] #add one for each keyword
     for cur_keyword in keywords:
         best_avg_sim=0
