@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from cloudant import Cloudant
 from flask import Flask, render_template, request, jsonify, session
 import atexit
@@ -7,7 +9,7 @@ import random
 import uuid
 from twilio.twiml.messaging_response import MessagingResponse
 import googlemaps
-from IPython import embed
+# from IPython import embed
 from ibm_watson import NaturalLanguageUnderstandingV1
 from ibm_watson.natural_language_understanding_v1 import Features, KeywordsOptions
 gmaps = googlemaps.Client(key='AIzaSyA7bV-H25Upx5HMPLQ_-5zDGfNNTypK6u4')
@@ -15,7 +17,7 @@ gmaps = googlemaps.Client(key='AIzaSyA7bV-H25Upx5HMPLQ_-5zDGfNNTypK6u4')
 app = Flask(__name__, static_url_path='')
 app.secret_key = 'BRYANHPCHIANG' + str(random.randint(1, 1000000000))
 
-db_name = 'mydb'
+db_name = 'rove'
 client = None
 db = None
 
@@ -49,7 +51,7 @@ elif os.path.isfile('vcap-local.json'):
         url = 'https://' + creds['host']
         client = Cloudant(user, password, url=url, connect=True)
         db = client.create_database(db_name, throw_on_exists=False)
-embed()
+# embed()
 # On IBM Cloud Cloud Foundry, get the port number from the environment variable PORT
 # When running this app on the local machine, default the port to 8000
 port = int(os.getenv('PORT', 8000))

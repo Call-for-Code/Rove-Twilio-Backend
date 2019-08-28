@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 """
 Hello World app for running Python apps on Bluemix
 """
