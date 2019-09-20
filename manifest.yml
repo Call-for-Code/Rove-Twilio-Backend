@@ -1,5 +1,5 @@
 ---
 applications:
  - name: rove-sms
-   random-route: true
-   memory: 128M
+   random-route: false
+   memory: 1024M

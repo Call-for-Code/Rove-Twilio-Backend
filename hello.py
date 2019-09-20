@@ -77,13 +77,13 @@ def root():
 # *     "name": "Bob"
 # * }
 # */
-@app.route('/api/visitors', methods=['GET'])
-def get_visitor():
-    if client:
-        return jsonify(list(map(lambda doc: doc['name'], db)))
-    else:
-        print('No database')
-        return jsonify([])
+# @app.route('/api/visitors', methods=['GET'])
+# def get_visitor():
+#     if client:
+#         return jsonify(list(map(lambda doc: doc['name'], db)))
+#     else:
+#         print('No database')
+#         return jsonify([])
 
 # /**
 #  * Endpoint to get a JSON array of all the visitors in the database
@@ -96,17 +96,17 @@ def get_visitor():
 #  * [ "Bob", "Jane" ]
 #  * @return An array of all the visitor names
 #  */
-@app.route('/api/visitors', methods=['POST'])
-def put_visitor():
-    user = request.json['name']
-    data = {'name': user}
-    if client:
-        my_document = db.create_document(data)
-        data['_id'] = my_document['_id']
-        return jsonify(data)
-    else:
-        print('No database')
-        return jsonify(data)
+# @app.route('/api/visitors', methods=['POST'])
+# def put_visitor():
+#     user = request.json['name']
+#     data = {'name': user}
+#     if client:
+#         my_document = db.create_document(data)
+#         data['_id'] = my_document['_id']
+#         return jsonify(data)
+#     else:
+#         print('No database')
+#         return jsonify(data)
 
 def get_health_priority(doc):
     sentence=doc['health']['health_description']
