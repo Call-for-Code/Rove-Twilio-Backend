@@ -1,5 +1,7 @@
 # Getting Started with Python on IBM Cloud
 
+Open sourced for IBM 2019 Global Call for Code challenge.
+
 ## Files
 - GoogleNews-vectors-negative300-SLIM.bin
 - ibm_key.py
